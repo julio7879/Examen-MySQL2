@@ -124,6 +124,8 @@ WHERE estado_intento = 'Permitido'
 USE coworking;
 SELECT * FROM VW_EstadoEspacios;
 ```
+<img width="1363" height="707" alt="image" src="https://github.com/user-attachments/assets/15470a39-28f0-4d34-bb02-0fe72d5382dc" />
+
 
 ### 6. Verificación del Procedimiento de Reporte Diario
 
@@ -131,6 +133,7 @@ SELECT * FROM VW_EstadoEspacios;
 ```sql
 CALL sp_GenerarReporteDiario();
 ```
+<img width="1365" height="712" alt="image" src="https://github.com/user-attachments/assets/715a691a-8528-478e-8297-4bc8b8def4a5" />
 
 #### Simulación con fecha del dataset de prueba (ej. `2026-03-31`):
 ```sql
@@ -138,6 +141,8 @@ SET @fecha_reporte = '2026-03-31';
 CALL sp_GenerarReporteDiario();
 SET @fecha_reporte = NULL; -- Restablece a tiempo real
 ```
+<img width="1365" height="721" alt="image" src="https://github.com/user-attachments/assets/b5e442cd-d406-48aa-8031-8c643c497a5d" />
+
 
 ### 7. Verificación de la Consulta en Pantalla
 ```sql
@@ -147,6 +152,8 @@ FROM accesos
 WHERE estado_intento = 'Permitido'
   AND fecha_hora_salida IS NULL;
 ```
+<img width="1364" height="719" alt="image" src="https://github.com/user-attachments/assets/11bc26bf-a477-40e7-99d0-f22ff07a8537" />
+
 
 ## 8. Estructura de Entregables
 
