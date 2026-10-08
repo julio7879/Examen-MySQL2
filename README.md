@@ -151,6 +151,14 @@ SELECT
 FROM accesos
 WHERE estado_intento = 'Permitido'
   AND fecha_hora_salida IS NULL;
+
+-- Inserción de los 5 accesos activos en tiempo real (fecha_hora_salida IS NULL):
+INSERT INTO accesos (usuario_id, reserva_id, fecha_hora_entrada, fecha_hora_salida, metodo_acceso, estado_intento, motivo_rechazo) VALUES
+(6,  NULL, DATE_SUB(NOW(), INTERVAL 120 MINUTE), NULL, 'RFID',   'Permitido', NULL), 
+(7,  NULL, DATE_SUB(NOW(), INTERVAL 90 MINUTE),  NULL, 'QR',     'Permitido', NULL), 
+(8,  NULL, DATE_SUB(NOW(), INTERVAL 60 MINUTE),  NULL, 'RFID',   'Permitido', NULL), 
+(10, NULL, DATE_SUB(NOW(), INTERVAL 35 MINUTE),  NULL, 'Manual', 'Permitido', NULL), 
+(11, NULL, DATE_SUB(NOW(), INTERVAL 10 MINUTE),  NULL, 'RFID',   'Permitido', NULL); 
 ```
 <img width="1364" height="719" alt="image" src="https://github.com/user-attachments/assets/11bc26bf-a477-40e7-99d0-f22ff07a8537" />
 
